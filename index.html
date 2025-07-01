@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LTheme</title>
+    <style>
+        body { margin: 0; text-align: center; background: #000; }
+        img { max-width: 100%; height: auto; }
+        button { 
+            padding: 10px 20px; 
+            background: #6bc56e; 
+            color: white; 
+            border: none; 
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img src="YanLite.jpg">
+    <audio id="player" loop>
+        <source src="LTheme.mp3" type="audio/mpeg">
+        <source src="LTheme.ogg" type="audio/ogg">
+    </audio>
+    <button onclick="document.getElementById('player').play()">▶️ Включить звук</button>
+
+    <script>
+        // Попытка автовоспроизведения (может не сработать в Chrome/Safari)
+        document.addEventListener('click', function() {
+            const audio = document.getElementById('player');
+            audio.play().catch(e => console.log(e));
+        });
+    </script>
+</body>
+</html>
